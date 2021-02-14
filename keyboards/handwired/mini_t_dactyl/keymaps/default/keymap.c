@@ -187,8 +187,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+-----+------+------+------+------|                        |------+------+------+------+------+-----|
  * | CTRL |  z  |   x  |   c  |   d  |   v  |                        |   m  |   h  |   ,  |   .  |  /?  | ALT |
  * '------+-----+------+------+------+------'------+          +------+------+------+------+------+------+-----'  
- *              |  {   |   }  | ENTER|Space | FN   |          | CMD  |  BS  |DEL   |  __  |   +  |
- *              |  [   |   ]  | SHIFT|      | NAV  |          | ESC  |      |FN    |   -  |   =  |
+ *              |  {   |   }  |Shift |Space |ENTER |          | CMD  |  BS  |DEL   |  __  |   +  |
+ *              |  [   |   ]  |      |      |      |          | ESC  |      |FN    |   -  |   =  |
  *              '------+------'------+------'------+          '------'------+------'------+------'
  */
 
@@ -206,22 +206,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,----------------------------------------,                        ,----------------------------------------,
  * |      |  F1 |  F2  |  F3  |  F4  |  F5  |                        |  F6  |  F7  |  F8  |  F9  |  F10 | F11 |
  * |------+-----+------+------+------+------|                        |------+------+------+------+------+-----|
- * | TAB  |     |      |Play_M|Rec_M |      |                        |  del | home |   ^  | PgUp | vol+ | F12 |
+ * | TAB  |     |      |Play_M|Rec_M |      |                        | Prev | home |   ^  | PgUp | vol+ | F12 |
  * |------+-----+------+------+------+------|                        |------+------+------+------+------+-----|
- * |      |     | Prev | Play | Next |      |                        |      |  <-  |   v  |   -> | mute |     |
+ * |      |     | Prev | Play | Next |      |                        | Play |  <-  |   v  |   -> | mute |     |
  * |------+-----+------+------+------+------|                        |------+------+------+------+------+-----|
- * | CTRL |     | Cut  | Copy | Paste|      |                        | home |  end | PgUp | PgDn | vol- |     |
+ * | CTRL |     | Cut  | Copy | Paste|      |                        | Next |  end |      | PgDn | vol- |     |
  * '------+-----+------+------+------+------'------+          +------+------+------+------+------+------+-----'
- *              |      |      | ENTER|Space | FN   |          | CMD  |  BS  |DEL   |      |      |
- *              |      |      | SHIFT|      | NAV  |          | ESC  |      |FN    |      |      |
+ *              | Reset|      | SHIFT|Space |ENTER |          | CMD  |  BS  |DEL   |      |      |
+ *              |      |      |      |      |      |          | ESC  |      |FN    |      |      |
  *              '------+------'------+------'------+          '------'------+------'------+------'
  */
 
 [_FN] = LAYOUT( \
-  _____,   KC_F1,  KC_F2,  KC_F3, KC_F4, KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,     KC_F10,  KC_F11,\
-  KC_TAB,  _____,  _____,  M_Pl,  M_St,DM_RSTP,                       KC_DEL,  KC_HOME, KC_UP,   KC_PGUP,   KC_VOLU, KC_F12,\
-  _____,   _____, KC_MPRV,KC_MPLY,KC_MNXT, _____,                     _____,   KC_LEFT, KC_DOWN, KC_RIGHT,  KC_MUTE, _____, \
-  KC_LCTL, _____, KC_CUT,KC_COPY,KC_PASTE, _____,                     KC_HOME, KC_END,  KC_PGUP, KC_PGDOWN, KC_VOLD, _____, \
+  _____,   KC_F1,  KC_F2,  KC_F3,   KC_F4,    KC_F5,                     KC_F6,     KC_F7,      KC_F8,   KC_F9,     KC_F10,  KC_F11,\
+  KC_TAB,  _____,  _____,  M_Pl,    M_St,     DM_RSTP,                   KC_MPRV,   KC_HOME,    KC_UP,   KC_PGUP,   KC_VOLU, KC_F12,\
+  _____,   _____, KC_MPRV, KC_MPLY, KC_MNXT,  _____,                     KC_MPLY,   KC_LEFT,    KC_DOWN, KC_RIGHT,  KC_MUTE, _____, \
+  KC_LCTL, _____, KC_CUT,  KC_COPY, KC_PASTE, _____,                     KC_MNXT,   KC_END,     _____,   KC_PGDOWN, KC_VOLD, _____, \
                    RESET,  _____,                                                       _____,   _____,                     \
                                 KC_LSFT, KC_SPC, KC_ENT,         CMD_ESC, KC_BSPC, FN_DEL                                 \
 ),
