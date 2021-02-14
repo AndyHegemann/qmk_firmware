@@ -4,10 +4,10 @@
 #include "mini_t_dactyl.h"
 
 
-#define _BASE 1
+#define _BASE 0
 #define _FN   3
 #define _COL  2
-#define _GAME 0
+#define _GAME 1
 
 #define _____ KC_NO
 
@@ -212,7 +212,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+-----+------+------+------+------|                        |------+------+------+------+------+-----|
  * | CTRL |     | Cut  | Copy | Paste|      |                        | Next |  end |      | PgDn | vol- |     |
  * '------+-----+------+------+------+------'------+          +------+------+------+------+------+------+-----'
- *              | Reset|      | SHIFT|Space |ENTER |          | CMD  |  BS  |DEL   |      |      |
+ *              |      |      | SHIFT|Space |ENTER |          | CMD  |  BS  |DEL   |      |      |
  *              |      |      |      |      |      |          | ESC  |      |FN    |      |      |
  *              '------+------'------+------'------+          '------'------+------'------+------'
  */
@@ -222,7 +222,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  _____,  _____,  M_Pl,    M_St,     DM_RSTP,                   KC_MPRV,   KC_HOME,    KC_UP,   KC_PGUP,   KC_VOLU, KC_F12,\
   _____,   _____, KC_MPRV, KC_MPLY, KC_MNXT,  _____,                     KC_MPLY,   KC_LEFT,    KC_DOWN, KC_RIGHT,  KC_MUTE, _____, \
   KC_LCTL, _____, KC_CUT,  KC_COPY, KC_PASTE, _____,                     KC_MNXT,   KC_END,     _____,   KC_PGDOWN, KC_VOLD, _____, \
-                   RESET,  _____,                                                       _____,   _____,                     \
+                   _____,  _____,                                                       _____,   _____,                     \
                                 KC_LSFT, KC_SPC, KC_ENT,         CMD_ESC, KC_BSPC, FN_DEL                                 \
 ),
 
@@ -261,12 +261,12 @@ void gv_finished(qk_tap_dance_state_t *state, void *user_data) {
             break;
         case DOUBLE_TAP:
             // Check to see if the layer is already set
-            if (layer_state_is(_BASE)) {
+            if (layer_state_is(_GAME)) {
                 // If already set, then switch it off
-                layer_off(_BASE);
+                layer_off(_GAME);
             } else {
                 // If not already set, then switch the layer on
-                layer_on(_BASE);
+                layer_on(_GAME);
             }
             break;
     }
