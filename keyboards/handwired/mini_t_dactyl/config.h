@@ -29,6 +29,13 @@
 
 #define SOFT_SERIAL_PIN D0
 
+#define FORCE_NKRO
+
+
+#define TAPPING_TERM 200
+
+#define COMBO_TERM 50
+#define COMBO_COUNT 3
 
 
 /* How to determine left/right hand. Choose one: */
