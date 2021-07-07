@@ -26,12 +26,12 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[0] = LAYOUT(
-		KC_ESC,		KC_TAB,		KC_BSPC,	TG(1), 
-		KC_CALC,	KC_PSLS,	KC_PAST,	KC_PMNS, 
-		KC_7,  		KC_8,		KC_9,		KC_PPLS, 
-		KC_4,		KC_5,		KC_6,
-		KC_1,		KC_2,		KC_3, 
-		LT_0_LY,	KC_DOT,		KC_PENT
+		KC_CALC,	KC_TAB,		KC_BSPC,	TG(1), 
+		KC_NLCK,	KC_PSLS,	KC_PAST,	KC_PMNS, 
+		KC_P7,  	KC_P8,		KC_P9,		KC_PPLS, 
+		KC_P4,		KC_P5,		KC_P6,
+		KC_P1,		KC_P2,		KC_P3, 
+		KC_P0,		KC_PDOT,	KC_PENT
 		),
 
 	[1] = LAYOUT(
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		KC_AMPR,	KC_PERC,	KC_EXLM,	KC_NO, 
 		KC_LPRN,	KC_RPRN,	KC_BSLS, 
 		KC_TILD,	KC_AT,		KC_HASH, 
-		KC_NO,		KC_COMM,	KC_EQL
+		RESET,		KC_COMM,	KC_EQL
 		)
 };
 
